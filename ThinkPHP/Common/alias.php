@@ -37,6 +37,8 @@ alias_import(array(
     'dBase'         => THINK_PATH.'/Lib/Think/Core/dBase.class.php',
     'mBase'         => THINK_PATH.'/Lib/Think/Core/mBase.class.php',
     'rBase'			=> THINK_PATH.'/Lib/Think/Core/rBase.class.php',
+	'RedisIo'		=> THINK_PATH.'/Lib/Think/Core/RedisIo.class.php',
+	'GearmanIo'		=> THINK_PATH.'/Lib/Think/Core/GearmanIo.class.php',
     )
 );
 ?>

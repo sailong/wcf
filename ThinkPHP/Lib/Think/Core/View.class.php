@@ -400,11 +400,13 @@ class View extends Think
             $count   =  substr_count($templateFile,'/');
             $path   = dirname(C('TMPL_FILE_NAME'));
             
-            $sub_dir = defined('SUB_GROUP_NAME') ? SUB_GROUP_NAME  . '/' : '';
-            
-            for($i=0;$i<$count;$i++)
+            $path .= defined('SUB_GROUP_NAME') ? '/' . SUB_GROUP_NAME : '';
+            for($i=0;$i<$count;$i++) {
                 $path   = dirname($path);
-            $templateFile =  $path.'/'. $sub_dir . $templateFile.C('TMPL_TEMPLATE_SUFFIX');
+            }
+            
+            $templateFile = str_replace('#', '/', $templateFile); 
+            $templateFile =  $path.'/'.$templateFile.C('TMPL_TEMPLATE_SUFFIX');
         }elseif(0 === strpos($templateFile,'./') && substr_count($templateFile,'.') == 1) {
             $path   = dirname(C('TMPL_FILE_NAME'));
             $templateFile =  $path.'/'.$templateFile.C('TMPL_TEMPLATE_SUFFIX');

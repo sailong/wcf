@@ -136,7 +136,7 @@ function getAreaNameList($area_id) {
     if(empty($area_id)) {
         return false;
     }
-    require_once('./Config/area.php');
+    require_once(CONFIGE_DIR .'/area.php');
     global $CONF_PROVINCE, $CONF_CITY, $CONF_COUNTY;
     list($provinceid , $cityid , $countyid) = decodeAreaId($area_id);
 
